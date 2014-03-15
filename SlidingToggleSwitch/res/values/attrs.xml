@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SlidingToggleSwitch">
+        <attr name="android:textColor" />
+        <attr name="leftButtonText" format="string" />
+        <attr name="rightButtonText" format="string" />
+        <attr name="sliderBackground" format="integer" />
+        <attr name="buttonBackground" format="integer" />
+    </declare-styleable>
+
+</resources>
