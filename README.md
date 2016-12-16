@@ -1,5 +1,5 @@
-SlidingToggleSwitch
-===================
+Sliding Toggle Switch
+=====================
 
 Sliding Toggle Switch (Android)
 
