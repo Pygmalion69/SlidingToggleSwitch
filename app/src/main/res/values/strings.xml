@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sliding Toggle Switch</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="left_button_text">Dante</string>
+    <string name="right_button_text">Beatrice</string>
+
+</resources>
