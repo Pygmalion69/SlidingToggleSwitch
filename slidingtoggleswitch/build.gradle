@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'pygmalion'
+    bintrayName = 'sliding-toggle-switch'
+
+    publishedGroupId = 'de.nitri.pygmalion'
+    libraryName = 'Sliding Toggle Switch'
+    artifact = 'slidingtoggleswitch'
+
+    libraryDescription = 'A toggle switch with a sliding button on Android'
+
+    siteUrl = 'http://pygmalion.nitri.de/sliding-toggle-button-on-android-348.html'
+    gitUrl = 'https://github.com/Pygmalion69/SlidingToggleSwitch.git'
+
+    libraryVersion = '0.1'
+
+    developerId = 'pygmalion69'
+    developerName = 'Serge Helfrich'
+    developerEmail = 'serge.helfrich@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -29,3 +53,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
