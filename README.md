@@ -19,6 +19,6 @@ dependencies {
 ```
 
 Apps implementing this switch:
-* [Plant Hero](https://play.google.com/store/apps/details?id=com.sigrow.dynamicfertilizer)
+* [Plant Hero](https://play.google.com/store/apps/details?id=com.sigrow.planthero)
 * [Hesi Dynamic Nutrients](https://play.google.com/store/apps/details?id=com.sigrow.dynamicfertilizer)
 * [SOS4US](https://play.google.com/store/apps/details?id=qit.sos4us)
