@@ -22,3 +22,6 @@ Apps implementing this switch:
 * [Plant Hero](https://play.google.com/store/apps/details?id=com.sigrow.planthero)
 * [Hesi Dynamic Nutrients](https://play.google.com/store/apps/details?id=com.sigrow.dynamicfertilizer)
 * [SOS4US](https://play.google.com/store/apps/details?id=qit.sos4us)
+
+
+![Sliding Toggle Switch](http://pygmalion.nitri.de/wp-content/uploads/2014/03/device-2014-03-15-220945.png "Sliding Toggle Switch")
