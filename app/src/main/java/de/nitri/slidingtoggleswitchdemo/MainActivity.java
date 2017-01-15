@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity implements OnToggleListener 
 
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
     public static class ToggleDemoFragment extends Fragment {
 
         public ToggleDemoFragment() {
