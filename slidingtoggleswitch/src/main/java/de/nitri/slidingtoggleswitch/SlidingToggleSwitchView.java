@@ -5,6 +5,8 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -25,10 +27,10 @@ public class SlidingToggleSwitchView extends FrameLayout implements
 
     private OnToggleListener listener;
 
-    public static int LEFT_SELECTED = 0;
-    public static int RIGHT_SELECTED = 1;
+    public static final int LEFT_SELECTED = 0;
+    public static final int RIGHT_SELECTED = 1;
 
-    private int POSITION = LEFT_SELECTED;
+    private int position = LEFT_SELECTED;
 
     public SlidingToggleSwitchView(Context context) {
         this(context, null);
@@ -86,6 +88,8 @@ public class SlidingToggleSwitchView extends FrameLayout implements
         if (buttonBackground != null)
             btnMovable.setBackground(buttonBackground);
 
+        setSaveEnabled(true);
+
     }
 
     public SlidingToggleSwitchView(Context context, AttributeSet attrs,
@@ -95,15 +99,15 @@ public class SlidingToggleSwitchView extends FrameLayout implements
 
     @Override
     public void onClick(View v) {
-        if (POSITION == RIGHT_SELECTED) {
-            POSITION = LEFT_SELECTED;
+        if (position == RIGHT_SELECTED) {
+            position = LEFT_SELECTED;
             listener.onToggle(LEFT_SELECTED);
             float destX = btnLeft.getX();
             ObjectAnimator shiftLeft = ObjectAnimator.ofFloat(btnMovable, "x",
                     destX);
             shiftLeft.start();
         } else {
-            POSITION = RIGHT_SELECTED;
+            position = RIGHT_SELECTED;
             listener.onToggle(RIGHT_SELECTED);
             float destX = btnRight.getX();
             ObjectAnimator shiftRight = ObjectAnimator.ofFloat(btnMovable, "x",
@@ -111,6 +115,42 @@ public class SlidingToggleSwitchView extends FrameLayout implements
             shiftRight.start();
         }
 
+    }
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("superState", super.onSaveInstanceState());
+        bundle.putInt("position", position);
+        return bundle;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            position = bundle.getInt("position");
+            super.onRestoreInstanceState(bundle.getParcelable("superState"));
+        } else {
+            super.onRestoreInstanceState(state);
+        }
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        // Set position if instance state has been restored
+        float destX;
+        if (position == LEFT_SELECTED) {
+            destX = btnLeft.getX();
+            btnMovable.setX(destX);
+            listener.onToggle(LEFT_SELECTED);
+        } else {
+            destX = btnRight.getX();
+            btnMovable.setX(destX);
+            listener.onToggle(RIGHT_SELECTED);
+        }
+        invalidate();
+        super.onLayout(changed, left, top, right, bottom);
     }
 
     public interface OnToggleListener {
