@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile 'de.nitri.pygmalion:slidingtoggleswitch:0.1'
+    compile 'de.nitri.pygmalion:slidingtoggleswitch:0.2'
 }
 ```
 
