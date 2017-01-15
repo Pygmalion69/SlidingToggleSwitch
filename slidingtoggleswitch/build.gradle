@@ -13,7 +13,7 @@ ext {
     siteUrl = 'http://pygmalion.nitri.de/sliding-toggle-button-on-android-348.html'
     gitUrl = 'https://github.com/Pygmalion69/SlidingToggleSwitch.git'
 
-    libraryVersion = '0.1'
+    libraryVersion = '0.2'
 
     developerId = 'pygmalion69'
     developerName = 'Serge Helfrich'
