@@ -3,7 +3,7 @@ Sliding Toggle Switch
 
 Sliding Toggle Switch (Android)
 
-Please refer to my [blog post](http://pygmalion.nitri.de/sliding-toggle-button-on-android-348.html) for usage.
+Please refer to my [blog post](http://pygmalion.nitri.org/sliding-toggle-button-on-android-348.html) for usage.
 
 Add it to your module's build.gradle:
 ```
